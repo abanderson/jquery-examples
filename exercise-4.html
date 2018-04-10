@@ -11,7 +11,21 @@
     HINT: lookup .val()
     */
     $(function () {
-      // write your code here
+      var textField = $('#text-field');
+      var clearButton = $('#clear-button');
+      var saveButton = $('#save-button');
+      var log = $('#log');
+
+      clearButton.click(function () {
+        textField.val('');
+      });
+
+      saveButton.click(function () {
+        var newListItem = $("<li></li>")
+        newListItem.html(textField.val());
+        log.append(newListItem);
+        textField.val('');
+      });
     });
     </script>
   </head>
